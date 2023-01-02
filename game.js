@@ -7,7 +7,8 @@ let counter = 0;
 let colors;
 
 function playSound(name) {
-  new Audio((src = `./sounds/${name}.mp3`)).play();
+  let audio = new Audio((src = `./sounds/${name}.mp3`));
+  audio.play();
 }
 
 function animatePress(currentColor) {
@@ -30,7 +31,7 @@ function nextSequence() {
       .animate({ opacity: 0.01 }, 100)
       .animate({ opacity: 1 }, 100);
     playSound(gamePattern[i]);
-    console.log(gamePattern);
+    // console.log(gamePattern);
     i = i + 1;
     if (i == gamePattern.length) {
       // окончание показа и позволение нажимать юзеру
@@ -61,7 +62,8 @@ function checkAnswer(userChosenColour) {
   // если неправильный цвет, то конец игры и обнуление
   else {
     $("body").addClass("game-over");
-    new Audio((src = `./sounds/wrong.mp3`)).play();
+    let lose = new Audio((src = `./sounds/wrong.mp3`));
+    lose.play();
     $("h1").text("Game is OVER!\n Press any key to restart!");
     setTimeout(() => {
       $("body").removeClass("game-over");
