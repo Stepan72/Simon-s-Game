@@ -1,0 +1,14 @@
+{
+  "name": "simon-game-challenge-starting-files",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "parcel build index.html",
+    "start": "parcel index.html"
+  },
+  "author": "Stepan Nimchuk",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.8.2"
+  }
+}
